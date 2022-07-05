@@ -1,7 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -21,8 +20,8 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: Icon(Icons.person),
-    ),
-             ],
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -33,27 +32,44 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: '',
-            ),
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.notifications),
             label: '',
-            )
+          )
         ],
       ),
-      body: Column(children:
-      [
+      body: Column(children: [
         //Find the best coffee for you
-    Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Text(
-          "Find the best coffee for you",
-        style: GoogleFonts.bebasNeue(
-            fontSize: 56,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Text(
+            "Find the best coffee for you",
+            style: GoogleFonts.bebasNeue(
+              fontSize: 56,
+            ),
           ),
         ),
-      )
+
+        SizedBox(height: 25),
 
         //Search Bar
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+                hintText: "Find your coffee...",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade600),
+                ),
+
+            ),
+          ),
+        ),
 
         //horizon listview of coffee tiles
       ]),
