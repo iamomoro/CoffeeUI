@@ -1,4 +1,5 @@
 import 'package:google_fonts/google_fonts.dart';
+import 'package:coffeeui/util/coffee_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           child: Text(
             "Find the best coffee for you",
             style: GoogleFonts.bebasNeue(
-              fontSize: 56,
+              fontSize: 42,
             ),
           ),
         ),
@@ -59,19 +60,27 @@ class _HomePageState extends State<HomePage> {
           child: TextField(
             decoration: InputDecoration(
               prefixIcon: Icon(Icons.search),
-                hintText: "Find your coffee...",
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
-
+              hintText: "Find your coffee...",
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey.shade600),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey.shade600),
+              ),
             ),
           ),
         ),
 
+        SizedBox(height: 25),
         //horizon listview of coffee tiles
+        Expanded(
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              CoffeeTile(),
+            ],
+          ),
+        ),
       ]),
     );
   }
