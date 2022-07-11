@@ -6,7 +6,7 @@ class CoffeeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0, bottom: 25),
+      padding: const EdgeInsets.only(left: 25.0, bottom: 20),
       child: Container(
           padding: EdgeInsets.all(12),
           width: 200,
@@ -20,7 +20,7 @@ class CoffeeTile extends StatelessWidget {
               //coffee image
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset('lib/images/latte.jpg'),
+                child: Image.asset('lib/images/latte.jpg') ,
               ),
 
               //coffee name
@@ -41,6 +41,26 @@ class CoffeeTile extends StatelessWidget {
                   ],
                 ),
               ),
+
+              //price
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('\$4.00'),
+                    Container(
+                      padding: EdgeInsets.all(4),
+                     decoration: BoxDecoration(
+                       color: Colors.orange,
+                       borderRadius: BorderRadius.circular(6),
+                     ),
+                     child: Icon(Icons.add),
+                    )
+
+                  ]
+                ),
+              )
             ],
           )),
     );
